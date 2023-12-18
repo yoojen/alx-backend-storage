@@ -1,0 +1,3 @@
+// return the total records in collection
+
+db.school.count()
