@@ -1,0 +1,3 @@
+// script that list all dbs in mongodb
+
+show dbs
