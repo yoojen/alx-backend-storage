@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """
     Database: logs
     Collection: nginx
@@ -14,11 +13,14 @@
             method=GET
             path=/status
 """
+from pymongo import MongoClient
+
 
 if __name__ == "__main__":
-    from pymongo import MongoClient
+    """ prints some stats from Nginx logs stored in MongoDB """
     client = MongoClient('mongodb://127.0.0.1:27017')
     client = client.logs
+
     print(f"{client.nginx.count_documents({})} logs")
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
