@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""cache class initializtion"""
+
 import redis
 from uuid import uuid4
 from typing import Union, Callable, Optional
+
+"""cache class initializtion"""
 
 
 class Cache:
     """class cache that creates methods for class"""
     def __init__(self) -> None:
         """Initialize cache class"""
-        self._redis = redis.Redis(decode_responses=True)
+        self._redis = redis.Redis()
         self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
